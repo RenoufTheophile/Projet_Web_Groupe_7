@@ -1,0 +1,111 @@
+/*####################################
+ style boutique
+ #####################################*/
+/*titre de page*/
+header h1{
+    text-align: center;
+}
+
+/*css du corps*/
+#corps{
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Photos des produits en vente */
+
+.products .displayprod {
+    display : inline-block;
+    height : 250px;
+    background-color : white;
+    border:2px solid black;
+    margin: 5px;
+}
+
+.products .prodpic {
+    height: 150px;
+}
+
+.products .price {
+    height : 30px;
+    width : 60px;
+    background-color : #333;
+    color : white;
+    float: top;
+    position : relative;
+    top : -21px;
+    left : 5px;
+    margin : 0px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.products .description {
+    width : 200px;
+    margin-left : 10px;
+}
+.products img{
+    max-height: 150px;
+}
+
+/*titre boutique*/
+.titre_boutique{
+    color: white;
+    background-color:black ;
+}
+
+
+/*carousel*/
+#carousel{
+    height: 40%;
+    max-height: 500px;
+}
+#carousel img{
+    
+    max-height:500px;
+}
+/*pour mieux voir les bouttons
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: aqua;
+}*/
+
+/*un produit une page*/
+.produits .image_p{
+    float: left;
+    height: 500px;
+} 
+.produits .flottant{
+    float:left;
+}
+.info_p .prix{
+    background-color: black;
+    color : white;
+}
+.info_p{
+    top : 100px;
+}
+
+/* barre de recherche */
+.recherche form{
+    max-width: 500px;
+}
+form input{
+    position: relative;
+    left: 150px;
+}
+form .text_recherche{
+    position: relative;
+    top: 50px;
+}
+
+form .redirection_article{
+    position: relative;
+    left: 660px;
+    top: -70px;
+}

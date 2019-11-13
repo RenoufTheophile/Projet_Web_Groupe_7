@@ -1,0 +1,31 @@
+.navbar {
+
+    width: 100%;
+    top: 0%;
+    position: relative;
+    background-color: black;
+    font-family: Roboto, sans-serif;
+    border-radius: 0px;
+    max-height: 55px;
+
+
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+
+}
+
+.navitem{
+    float: right;
+    text-align: center;
+    padding: 12px;
+}
+
+.imgnav{
+    width: 100%;
+    position: relative;
+    max-height: 50px;
+    border-radius: 30px;
+}
