@@ -175,6 +175,50 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000;
 }
+.container{
+  display: inline-block;
+  cursor: pointer;
+}
+
+.heart {
+  background-color: black;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 10px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: black;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.heart:before {
+  top: -5px;
+  left: 0;
+}
+
+.heart:after {
+  left: 5px;
+  top: 0;
+}
+.change .heart{
+  background-color: red;
+}
+.change .heart:after{
+  background-color: red;
+}
+.change .heart:before{
+  background-color: red;
+}
   </style>
   </head>
   <body>
@@ -196,11 +240,7 @@ h1 {
     }
     ?>
 
-      <h2>Upload Image Form</h2>
-      <p>Click on the button at the bottom of this page to upload an image.</p>
-      <p>This button will appear only for connected users</p><br />
 
-      <button class="open-button" onclick="openForm()">Upload Picture</button>
 
       <div class="form-popup" id="myForm">
       <form action="Image/gallery/upload_picture.php" class="form-container"method="POST" enctype="multipart/form-data" style="border:1px solid #ccc">
@@ -226,9 +266,6 @@ h1 {
   <h2>gallery</h2>
   <div id="myBtnContainer">
     <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-    <button class="btn" onclick="filterSelection('nature')"> Nature</button>
-    <button class="btn" onclick="filterSelection('cars')"> Cars</button>
-    <button class="btn" onclick="filterSelection('people')"> People</button>
   </div>
 
   <!-- Photo Grid -->
@@ -237,7 +274,7 @@ h1 {
       <?php
       include("AccerBDD.php");
       $bdd=connexobject("webproject","myparam");
-      $query = $bdd->query("CALL select_picture");
+      $query = $bdd->query("SELECT * FROM `picture`");
       $resultat = $query->fetchAll();
 
 
@@ -246,9 +283,14 @@ h1 {
         $src=$resultat[$key]['picture_name'];
         $name=$resultat[$key]['picture_id'];
 
+        $statement = $bdd->prepare("SELECT SUM(`likes`) FROM `commentary` WHERE ?=picture_id ");
+        $statement->execute(array($name));
+        $ligne = $statement->fetch();
+        $like = $ligne[0];
 
         $bdd_comment=connexobject("webproject","myparam");
-        $query_comment=$bdd_comment->query("CALL select_comment($name)");
+        $query_comment=$bdd_comment->prepare("SELECT `commentary.comment`, `user.first_name`, `user.last_name` FROM `commentary`,`user` WHERE `picture_id`=? AND `user.id`=`commentary.id`");
+        $query_comment->execute(array($name));
         $resultat_comment=$query_comment->fetchAll();
 
         echo "<div class='column nature'>";
@@ -257,6 +299,15 @@ h1 {
             echo"<div class='content'>";
               echo"<h4>".$resultat[$key]['picture_name']."</h4>";
               echo"<p>".$resultat[$key]['picture_description']."</p>";
+              echo "<div class='form-popup 'id='myLikes'>";
+              echo "<form action='Image/gallery/upload_heart.php' class='form-container' method='POST' enctype='multipart/form-data' style='border:1px solid #ccc'>";
+              echo "<div class='container' onclick='myFunction(this)'>";
+              echo "<label class ='heart'></label>";
+              echo "<input type='submit'  name='likes' values='Like'>";
+              echo "</form>";
+              echo "</div>";
+              echo "<p>".$like."</p>";
+              echo"</div>";
               echo "<h4>Comment</h4>";
               foreach ($resultat_comment as $key => $value) {
 
@@ -329,6 +380,9 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+}
+function myFunction(x) {
+  x.classList.toggle("change");
 }
   </script>
   <footer>
