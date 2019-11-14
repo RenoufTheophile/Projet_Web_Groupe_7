@@ -55,6 +55,11 @@ session_start();
                 <?php include('Boutique/autocomplete.php');?>
             </div>
 
+            <!-- controle des produit affiché par prix -->
+            <div class='controle_prix'>
+                <?php include('Boutique/boutique_prix.php'); ?>
+            </div>
+
             <!-- liste des produits trié par catégorie -->
             <div class="products">
                 <?php include("Boutique/portofolio/portofolio_bdd.php"); ?>

@@ -24,8 +24,11 @@
 }
 
 .imgnav{
-    width: 100%;
-    position: relative;
+    width: 90%;
     max-height: 50px;
     border-radius: 30px;
+}
+
+.navactive{
+    width:10%;
 }
