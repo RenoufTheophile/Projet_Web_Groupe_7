@@ -21,7 +21,7 @@
                         <a class="dropdown-item" href="#">Clubs</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="Boutique.php">Boutique</a>
-                        <a class="dropdown-item" href="#">Galerie</a>
+                        <a class="dropdown-item" href="galery.php">Galerie</a>
                     </div>
                    
               </li>
@@ -44,20 +44,20 @@
             <?php
             if(isset($_SESSION['connected'])){
               echo"<li>
-              <a class='nav-link' href='\Projet_Web_Groupe_7/Webproject-MAIN/deco.php'>LOGOUT</a>
+              <a class='nav-link' href='deco.php'>LOGOUT</a>
               </li>
               <li>
-              <a class='nav-link' href='\Projet_Web_Groupe_7/Webproject-MAIN/page_admin/admin.php'>ADMINISTRATE</a>
+              <a class='nav-link' href='page_admin/admin.php'>ADMINISTRATE</a>
               </li>";
               
             }
             else{
               echo"
                 <li>
-                <a class='nav-link' href='\Projet_Web_Groupe_7/Webproject-MAIN/connexion.php'>Log in</a>
+                <a class='nav-link' href='connexion.php'>Log in</a>
                   </li>
                   <li>
-                  <a class='nav-link' href='\Projet_Web_Groupe_7/Webproject-MAIN/register.php'>Register</a>
+                  <a class='nav-link' href='register.php'>Register</a>
                   </li>";
             }
             ?>

@@ -26,7 +26,7 @@ if(isset($_FILES['fileToUpload']))
         <hr /><big>Le transfert est effectué ! $picture_photo ,$id,$picture_description</big>";
         echo"
     
-    <a href=\"../../gallery.php\"><button class=\"button\"><span>Back to Galery</span></button></a>";
+    <a href=\"../../galery.php\"><button class=\"button\"><span>Back to Galery</span></button></a>";
       }
 
     }
