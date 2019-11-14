@@ -43,7 +43,7 @@
 
     while($data=$requete->fetch(PDO::FETCH_ASSOC)){
         echo "<div class='column " .$cat[$data['goodies_category']]."'>
-                <a href='template_produit.php?id=".$data['goodies_id']."'>
+                <a href='Boutique/template_produit.php?id=".$data['goodies_id']."'>
                     <div class='content'>
                         <img src='image_temp/".$data['goodies_photo']."' alt='".$data['goodies_name']."' style='width:100%'>
                         <h4>".$data['goodies_name']."</h4>

@@ -15,17 +15,17 @@ $bdd = new PDO('mysql:host=localhost;dbname=webproject;charset=utf8', 'root', ''
 echo "<div id='carousel' class='carousel slide' data-ride='carousel'>
     <div class='carousel-inner'>
         <div class='carousel-item active'>
-            <a href='template_produit.php?id=".$data1['goodies_id']."'>
+            <a href='Boutique/template_produit.php?id=".$data1['goodies_id']."'>
             <img class='d-block w-100' src='image_temp/".$data1['goodies_photo']."' alt='Produit le plus commandé'>
             </a>
         </div>
         <div class='carousel-item '>
-            <a href='template_produit.php?id=".$data2['goodies_id']."'>
+            <a href='Boutique/template_produit.php?id=".$data2['goodies_id']."'>
             <img class='d-block w-100' src='image_temp/".$data2['goodies_photo']."' alt='2eme produit le plus commandé'>
             </a>
         </div>
         <div class='carousel-item '>
-            <a href='template_produit.php?id=".$data3['goodies_id']."'>
+            <a href='Boutique/template_produit.php?id=".$data3['goodies_id']."'>
             <img class='d-block w-100' src='image_temp/".$data3['goodies_photo']."' alt='3eme produit le plus commandé'>
             </a>
         </div>
