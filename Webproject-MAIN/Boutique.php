@@ -54,7 +54,7 @@ session_start();
             <div class='barre de recherche'>
                 <?php include('Boutique/autocomplete.php');?>
             </div>
-            
+
             <!-- controle des produit affiché par prix -->
             <div class='controle_prix'>
                 <?php include('Boutique/boutique_prix.php'); ?>
