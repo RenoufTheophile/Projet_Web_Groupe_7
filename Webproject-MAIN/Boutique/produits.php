@@ -5,12 +5,14 @@ requete pour remplir template_produit
 <?php
     $bdd = new PDO('mysql:host=localhost;dbname=webproject;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $id=$_GET['id'];
-    $requete =$bdd->query("CALL info_goodies($id)");
+    $requete =$bdd->prepare("CALL info_goodies(:id)");
+    $requete->bindParam(':id',$id);
+    $requete->execute();
 
     $data=$requete->fetch(PDO::FETCH_ASSOC);
         echo "<div class='produit_seul'>
                 <div class='flottant'>
-                    <img src='../Image/image_temp/".$data['goodies_photo']."' class='image_p' alt='photo produit'/>
+                    <img src='image_temp/".$data['goodies_photo']."' class='image_p' alt='photo produit'/>
                 </div>
                 <div class='info_p'>
                     
