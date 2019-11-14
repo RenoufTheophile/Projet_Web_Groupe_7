@@ -109,3 +109,23 @@ form .redirection_article{
     left: 660px;
     top: -70px;
 }
+
+/*filtre prix*/
+.controle_prix form{
+    max-width: 100px;
+}
+form .euro{
+    position: relative;
+    left: 300px;
+    top: -70px;
+}
+.controle_prix .prix2{
+    position: relative;
+    left: 360px;
+    top: -134px;
+}
+.controle_prix .changement_prix {
+    position: relative;
+    left: 700px;
+    top: -230px;
+}
