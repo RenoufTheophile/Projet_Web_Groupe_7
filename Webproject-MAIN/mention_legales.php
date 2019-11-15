@@ -29,7 +29,7 @@
 
 
 
-    <img class="CESI" src="Images\CESI.jpg" alt="CESI">
+    <img class="CESI" src="Image\event\CESI.jpg" alt="CESI">
 
     <article class="mentions">
         <h2>Définitions</h2>

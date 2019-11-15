@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title> Formulaire PHP </title>
-    <link rel="stylesheet" type="text/css" href="footer.css"/>
 </head>
 <body>
 
@@ -45,7 +44,10 @@
             <input type="number" placeholder="Price of activity" name="activity_price" required>
         </div>
 
-
+        <div>
+            <label for="fichier"><b>Image de l'événement</b></label>
+            <input type="file" placeholder="File" name="file_activity" required>
+        </div>
 
         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 

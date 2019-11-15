@@ -1,0 +1,195 @@
+* {box-sizing: border-box;
+}
+
+#Mbody{
+  height: 100%;
+  width: 100%;
+  background-color: #f2f2f2;
+  font-family: Roboto, sans-serif;
+
+}
+
+/* Center website */
+.main {
+  background-color: #f2f2f2;
+  margin: auto;
+}
+
+.mentions{
+  margin-left: 10px;
+  margin-right: 50px;
+  text-align: justify;
+}
+
+.textBlockMain{
+  margin-top: 20px;
+  width: 100%;
+}
+
+.textMain{
+  width: 400px;
+  text-align: justify;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.paraphMain{
+  width: 400px;
+  text-align: justify;
+  float: right;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 3px grey groove;
+  border-radius: 10px;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container-fluid{
+  padding: 35px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.CESI{
+  width: 100%;
+  height: auto;
+}
+
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+  margin-top: auto;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: #4d75bb;
+  padding: 20px;
+  color : white;
+  text-align: center;
+  border-style: solid;
+  border-color: #004995;
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  max-height: 500px;
+  border-radius: 8px;
+}
+
+.imageContent{
+  border-style: solid;
+  border-width: medium;
+  border-color: #004995;
+  border-radius: 8px;
+  width:190px;
+  height: auto;
+  min-height: 250px;
+  max-height: 250px;
+}
+
+.lien-content{
+  text-decoration: none;
+  color: white;
+}
+
+.titreEvt{
+  margin-top: .5rem;
+  font-size: 20px;
+}
+
+.descriptionContent{
+  text-align: justify;
+}
+
+.CESI{
+  border-bottom: solid;
+  border-bottom-width: 8px;
+  border-bottom-color: #4d75bb;
+}
+
+
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+
+
+}
+
+
+

@@ -43,15 +43,22 @@ include_once("BDD_Read_Event.php");
         <div class="last">
             <?php
             $id_event= $_GET['id_event'];
-            $id_user=$_SESSION['id'];
-            $ligne = readEvent($id_event);
-            $ligne = readEvent($_GET['id_event']);
-            echo"<img class='imageEvtLast' src='Images\arbe.jpg' alt='Event Image' style='width:100%;height: auto'>";
-            echo"<p class='titreEvt2'>$ligne[1]</p>";
-            echo"<p class='descrition'>$ligne[3]</p>";
+            $id_user=3;//$_SESSION['id'];
+            $ligne = readEvent3($id_event);
+            echo"<img class='imageEvtLast' src='Image/event/".$ligne[6]."' alt='Event Image' style='width:100%;height: auto'>";
+            echo"<p class='titreEvt2'>".$ligne[1]."</p>";
+            echo"<p class='descrition'>".$ligne[3]."</p>";
             ?>
-            <a href="inscriptionEvent.php?id_act=<?php$id_event."&id_user=".$id_user?>">
+            <a href="inscriptionEvent.php?id_act=<?php echo $id_event;?>&id_user=<?php echo $id_user;?>">
                 <button type="button" class="btn btn-warning">S'inscrire</button>
+            </a>
+
+            <a href="listeInscrits.php?id_act=<?php echo $id_event;?>">
+                <button type="button" class="btn btn-warning">Voir la liste des inscrits</button>
+            </a>
+
+            <a href="espaceComment.php?id_act=<?php echo $id_event;?>">
+                <button type="button" class="btn btn-warning">Commentaires de l'événement</button>
             </a>
 
         </div>
