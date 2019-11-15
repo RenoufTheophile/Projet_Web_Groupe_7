@@ -37,6 +37,11 @@ session_start();
 
 
     <!-- Corps -->
+    <div id='validation'>
+        <form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/valide_panier.php' method='post' id='form_panier'>
+            <input type='submit' name='validation' value='Passer commande'/>
+        </form>
+    </div>
 
     <div class="produits">
         <?php include('Boutique/panier.php'); ?>

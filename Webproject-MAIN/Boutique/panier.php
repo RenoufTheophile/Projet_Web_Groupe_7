@@ -10,7 +10,7 @@ requete pour remplir template_panier
     $requete->execute();
 
     $data=$requete->fetch(PDO::FETCH_ASSOC);
-        $panier=explode(':',$data['cart']);
+    $panier=explode(':',$data['cart']);
         
     $requete->closeCursor();
 
@@ -46,6 +46,10 @@ requete pour remplir template_panier
                         </div>
                     </a>
 
+                    <form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/supprime1_panier.php' method='post' id='form_panier'>
+                    <input type='hidden' name='id' value='".$produit."'/>
+                    <input type='submit' name='valider' value='Retirer du panier un exemplaire'/>
+                    </form>
                     <form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/supprime_panier.php' method='post' id='form_panier'>
                     <input type='hidden' name='id' value='".$produit."'/>
                     <input type='submit' name='valider' value='Retirer du panier tout les exemplaires'/>
@@ -58,6 +62,4 @@ requete pour remplir template_panier
     
 
     }
-
-
 ?>
