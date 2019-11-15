@@ -12,7 +12,7 @@
       $associé[$data['goodies_name']]=$data['goodies_id'];
   }
   ?>
-<form name="test" method="post" action="Boutique/redirect.php">
+<form name="test" method="post" action="redirect.php">
         <span class='text_recherche'>Barre de recherche: </span>
         <input id="tags" type="text" name="article"/>
         <input type="submit" class='redirection_article' name="valider" value="Aller à l'article"/>

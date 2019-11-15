@@ -17,5 +17,5 @@ $bdd = new PDO('mysql:host=localhost;dbname=webproject;charset=utf8', 'root', ''
     
     $data=$requete->fetch(PDO::FETCH_ASSOC);
     
-header('Location:../template_produit.php?id='.$data['goodies_id']);
+header('Location:template_produit.php?id='.$data['goodies_id']);
 ?>

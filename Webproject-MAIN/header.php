@@ -44,9 +44,6 @@
             <?php
             if(isset($_SESSION['connected'])){
               echo"<li>
-              <a class='nav-link' href='template_panier.php'>Panier</a>
-              </li>
-              <li>
               <a class='nav-link' href='deco.php'>LOGOUT</a>
               </li>
               <li>

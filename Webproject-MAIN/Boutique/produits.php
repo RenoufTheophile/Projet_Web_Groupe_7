@@ -20,15 +20,9 @@ requete pour remplir template_produit
                     <div class='prix'> Prix: ".$data['goodies_cost']."€ </div>
                     <div class='catégorie'> Catégorie: ".$data['goodies_category']."</div>
                     <div class='description'> Description: </br>".$data['goodies_description']."</div>
-                </div>";
-                if (isset($_SESSION['connected'])){
-                    echo"<form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/ajout_panier.php' method='post' id='form_panier'>
-                    <input type='hidden' name='id' value='".$id."'/>
-                    <input type='submit' name='valider' value='Ajouter au panier'/>
-                </form>";
-                }
+                </div>
                    
-            echo"</div>";
+            </div>";
     
     
     $requete->closeCursor();

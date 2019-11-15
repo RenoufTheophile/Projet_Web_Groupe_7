@@ -22,7 +22,6 @@ session_start();
         <link rel="stylesheet" href="Boutique/css/style_boutique.css" />
         <link rel="stylesheet" href="footer.css" />
         <link rel="stylesheet" href="header.css"/>
-        <link rel="stylesheet" href="/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/portofolio/style_portofolio.css"
 
         <title>Boutique du BDE</title>
     </head>

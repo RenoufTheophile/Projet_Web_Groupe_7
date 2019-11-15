@@ -49,15 +49,8 @@
                         <h4>".$data['goodies_name']."</h4>
                         <p>".$data['goodies_cost']."‎€</p>
                     </div>
-                </a>";
-                if (isset($_SESSION['connected'])){
-                    echo"<form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/ajout_panier.php' method='post' id='form_panier'>
-                            <input type='hidden' name='id' value='".$data['goodies_id']."'/>
-                            <input type='submit' name='valider' value='Ajouter au panier'/>
-                        </form>";
-                }
-                echo "</div>";
+                </a>
+                </div>";
     }
-    $requete->closeCursor();
 ?>
 </div>

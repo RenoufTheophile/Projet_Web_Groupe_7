@@ -188,8 +188,63 @@ button:hover {
     width: 100%;
   }
 
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .main{
+    margin: auto;
+  }
+
+  .column {
+    width: 50%;
+  }
+
+  .textMain{
+    width: 300px;
+    margin-left: 10px;
+  }
+
+  .paraphMain{
+    width: 300px;
+    float: right;
+    margin-right: 10px;
+
+  }
+
 
 }
 
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .main{
+    margin: auto;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .textMain{
+    font-size: 75%;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    max-height: 80px;
+    margin:auto;
+  }
+
+  .paraphMain{
+    font-size: 50%;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    max-height: 80px;
+    margin:auto;
+
+  }
+
+}
 
 
