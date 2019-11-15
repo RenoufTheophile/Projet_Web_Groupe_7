@@ -51,7 +51,7 @@ if(isset($_SESSION['connected'])){
         <div class="row">
             <div class="column">
                 <div class="content">
-                    <a class="lien-content" href="Events.php">
+                    <a class="lien-content" href="BDE.php">
                         <img class='imageContent' src='Image\event\BDEmain.jpg' alt='Event Image' style='width:100%;height: auto'>
                         <p class='titreEvt'>Bureau Des Étudiants</p>
                         <p class='descriptionContent'>Représentant des élèves, organisent et présentent des événement pour les élèves et l'école. Ils permettent la bonne cohésion entre l'administration et les élèves et une bonne entente entre les promotions du CESI.</p>

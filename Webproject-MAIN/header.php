@@ -17,8 +17,8 @@
     Autres services
 </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">BDE</a>
-                        <a class="dropdown-item" href="#">Clubs</a>
+                        <a class="dropdown-item" href="BDE.php">BDE</a>
+                        <a class="dropdown-item" href="Club.php">Clubs</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="Boutique.php">Boutique</a>
                         <a class="dropdown-item" href="galery.php">Galerie</a>
