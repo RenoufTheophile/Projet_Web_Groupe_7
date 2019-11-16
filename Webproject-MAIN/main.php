@@ -14,15 +14,15 @@ session_start();
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script type="text/javascript" src="popup.js"></script>
         
     <title>Site Web BDE-CESI</title>
     </head>
 
 
-<body id="Mbody">
+<body id="Mbody" onLoad="popup('main.php', 'Site Web BDE-CESI')">
 <header>
 <?php
-
 include("header.php");
 ?>
 </header>
@@ -96,29 +96,12 @@ if(isset($_SESSION['connected'])){
 
 </main>
 
-<link rel="stylesheet" type="text/css" href="cookie.css"/>
-<div id="cookieConsent">
-    <div id="closeCookieConsent">x</div>
-    This website is using cookies. <a href="#" target="_blank">More info</a>. <a class="cookieConsentOK">That's Fine</a>
-</div>
 
 </body>
-<footer>
+
 <?php
-
 include("footer.php");
-
 ?>
-</footer>
+
 </html>
 
-<script type="text/javascript" language="javascript">
-$(document).ready(function(){   
-    setTimeout(function () {
-        $("#cookieConsent").fadeIn(200);
-     }, 4000);
-    $("#closeCookieConsent, .cookieConsentOK").click(function() {
-        $("#cookieConsent").fadeOut(200);
-    }); 
-}); 
-</script>

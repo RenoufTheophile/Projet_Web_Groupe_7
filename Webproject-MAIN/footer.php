@@ -62,16 +62,16 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a class="icone" href="#!">Conditions générales de ventes</a>
+                        <a class="icone" href="CGV.php">Conditions générales de ventes</a>
                     </li>
                     <li>
-                        <a class="icone" href="#!">Politique de confidentialité</a>
+                        <a class="icone" href="PDC.php">Politique de confidentialité</a>
                     </li>
                     <li>
                         <a class="icone" href="mention_legales.php">Mentions légales</a>
                     </li>
                     <li>
-                        <a class="icone" href="#!">Crédits</a>
+                        <a class="icone" href="Credits.php">Crédits</a>
                     </li>
                 </ul>
 
