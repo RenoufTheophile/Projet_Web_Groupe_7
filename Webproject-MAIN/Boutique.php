@@ -10,7 +10,6 @@ session_start();
 <html>
 
     <head>
-        <meta charset="utf-8" />
         <link rel="stylesheet" href="Boutique/css/style.css" />
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
@@ -70,8 +69,6 @@ session_start();
         
     </body>
 
-    <footer>
     <?php include("footer.php"); ?>
-    </footer>
 
 </html>

@@ -8,6 +8,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=webproject;charset=utf8', 'root', ''
     }else{
         $quantité=0;
     };
+    print_r($_POST);
     for ($i=0;$i<$quantité;$i++){
     $requete =$bdd->prepare("CALL ajout_panier(:id_p,:id_u)");
     $requete->bindParam(':id_p',$id);

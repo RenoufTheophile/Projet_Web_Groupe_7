@@ -51,7 +51,7 @@
                     </div>
                 </a>";
                 if (isset($_SESSION['connected'])){
-                    echo"<form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/ajout_panier.php' method='post' id='form_panier'>
+                    echo"<form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/ajout_panier.php' method='post' >
                             <input type='hidden' name='id' value='".$data['goodies_id']."'/>
                             Nombres d'exemplaires<input name='quantité'/>
                             <input type='submit' name='valider' value='Ajouter au panier'/>
