@@ -64,10 +64,12 @@ body {
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="/page_admin/admin.php" class="active">Home</a>
-  <a href="adm_user/index.php">Admin users</a>
-  <a href="Goodies_admin/index_goodies.php">Admin goodies</a>
-  <a href="commentary_admin/index_commentary.php">Admin comments</a>
+  <a href="page_admin/admin.php" class="active">Home</a>
+  <a href="http://localhost:4300/customers">Admin users</a>
+  <a href="http://localhost:4300/goodies">Admin goodies</a>
+  <a href="http://localhost:4300/commentary">Admin comments</a>
+  <a href="http://localhost:4300/activity">Admin activity</a>
+  <a href="http://localhost:4300/picture">Admin picture</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>

@@ -1,0 +1,47 @@
+<%- include layouts/header.ejs %>
+        <div class="page-data">
+         <div class="data-btn">
+           <button onClick="addGoodies();">+ Add</button>
+         </div>
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>goodies_name</th>
+                    <th>goodies_description</th>
+                    <th>goodies_in_stock</th>
+                    <th>goodies_category</th>
+                    <th>order_number</th>
+                    <th>goodies_photo</th>
+                    <th>goodies_cost</th>
+                    <th width="120px">Action</th>
+                </tr>                               
+                <% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>                 
+                <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=data[i].goodies_name%></td>
+                    <td><%=data[i].goodies_description%></td>
+                    <td><%=data[i].goodies_in_stock%></td>
+                    <td><%=data[i].goodies_category%></td>
+                    <td><%=data[i].order_number%></td>
+                    <td><%=data[i].goodies_photo%></td>
+                    <td><%=data[i].goodies_cost%></td>
+                    <td>
+                        <a class="a-inside edit" href="../goodies/edit/<%=data[i].goodies_id%>">Edit</a>                       
+                        <a class="a-inside delete" href="../goodies/delete/<%=data[i].goodies_id%>">Delete</a>                       
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+            <% } %>
+                                                             
+            </table>
+         </div>
+        </div>        
+<%- include layouts/footer.ejs %>

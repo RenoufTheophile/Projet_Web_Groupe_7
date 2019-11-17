@@ -1,0 +1,40 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/goodies/edit/<%=data[0].goodies_id%>">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">goodies_name</td><td>: <input type="text" name="goodies_name" value="<%=data[0].goodies_name%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">goodies_description</td><td>: <input type="text" name="goodies_description" value="<%=data[0].goodies_description%>" required></td>
+                 </tr>
+                <tr>
+                    <td class="label">goodies_in_stock</td><td>: <input type="text" value="<%=data[0].goodies_in_stock%>" name="goodies_in_stock" required></td>
+                 </tr>
+                  <tr>
+                    <td class="label">goodies_category</td><td>: <input type="text" name="goodies_category" value="<%=data[0].goodies_category%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">order_number</td><td>: <input type="text" name="order_number" value="<%=data[0].order_number%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">goodies_photo</td><td>: <input type="text" name="goodies_photo" value="<%=data[0].goodies_photo%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">goodies_cost</td><td>: <input type="text" name="goodies_cost" value="<%=data[0].goodies_cost%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd4()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        
+<%- include layouts/footer.ejs %>

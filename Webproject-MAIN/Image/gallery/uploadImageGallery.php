@@ -8,24 +8,24 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
+  background-color: #555;
   color: white;
-  padding: 16px 10px;
+  padding: 16px 20px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
+  position: relative;
+  bottom: 23px;
+  right: 28px;
   width: 280px;
-  background-color: #4d75bb;
-  border-radius: 15px;
 }
-
-
 
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
   position: fixed;
   bottom: 0;
-  right: auto;
+  right: 15px;
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
@@ -34,7 +34,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .form-container {
   max-width: 300px;
   padding: 10px;
-  background-color: #4d75bb;
+  background-color: white;
 }
 
 /* Full-width input fields */
@@ -73,35 +73,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-
-
-
 </style>
 </head>
 <body>
-  <div class="form-popup" id="myForm2">
-  <form action="mail.php" class="form-container"method="POST" enctype="multipart/form-data" style="border:1px solid #ccc">
-<
-          <h1>BAD Picture</h1>
-          <p>Please fill in this form to report an picture</p>
+<!-- From to add an image -->
+<h2>Upload Image Form</h2>
+<p>Click on the button at the bottom of this page to upload an image.</p>
+<p>This button will appear only for connected users</p><br />
 
-          <label for="description"><b>Put why you report this picture</b></label>
-            <input type="text" placeholder="Enter picture description" name="picture_description" required>
-
-
-          <label for="picture"><b>Put the name of the picture</b></label>
-            <input type="text" place holder="Enter picture name" name="picture_name" id="picture_name" >
-
-
-          <button type="button" onclick="closeForm2()" class="btn cancel">Cancel</button>
-          <input type="submit" name="btn" value="Upload Mail">
-          </form>
-        </div>
-
-
-
-<button class="open-button" onclick="openForm1()">Upload Picture</button>
-<button class="open-button" onclick="openForm2()">Delete Picture</button>
+<button class="open-button" onclick="openForm()">Upload Picture</button>
 
 <div class="form-popup" id="myForm">
 <form action="Image/gallery/upload_picture.php" class="form-container"method="POST" enctype="multipart/form-data" style="border:1px solid #ccc">
@@ -122,37 +102,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
         </form>
       </div>
       <script>
-var action = 1;
-var action2 = 1;
-
-function openForm1() {
-  if ( action == 1 ) {
+function openForm() {
   document.getElementById("myForm").style.display = "block";
-  action=2;
-}else{
+}
+
+function closeForm() {
   document.getElementById("myForm").style.display = "none";
-  action=1;
-}
-}
-
-function openForm2() {
-  if ( action2 == 1 ) {
-  document.getElementById("myForm2").style.display = "block";
-  action2=2;
-}else{
-  document.getElementById("myForm2").style.display = "none";
-  action2=1;
-}
-}
-
-function closeForm(){
-  document.getElementById("myForm").style.display = "none";
-}
-
-function closeForm2(){
-  document.getElementById("myForm2").style.display = "none";
 }
 </script>
-
-
-</body>
+</div>

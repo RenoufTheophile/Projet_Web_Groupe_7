@@ -1,0 +1,31 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/commentary/edit/<%=data[0].commentary_id%>">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">id</td><td>: <input type="text" name="id" value="<%=data[0].id%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">picture_id</td><td>: <input type="text" name="picture_id" value="<%=data[0].picture_id%>" required></td>
+                 </tr>
+                <tr>
+                    <td class="label">comment</td><td>: <input type="text" value="<%=data[0].comment%>" name="comment" required></td>
+                 </tr>
+                  <tr>
+                    <td class="label">likes</td><td>: <input type="text" name="likes" value="<%=data[0].likes%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd2()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        
+<%- include layouts/footer.ejs %>

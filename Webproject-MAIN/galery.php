@@ -316,11 +316,14 @@ h1 {
 
 
     <?php
+    //If the connected user is a BDE member or a student we add the from for upload a picture.
     if(isset($_SESSION['connected'])){
       if($_SESSION['role']=="bdemember"||$_SESSION['role']=="student"){
 
         include("Image\gallery\uploadImageGallery.php");
-      }elseif ($_SESSION['role']=="employee") {
+      }
+      //if the connected user is an employee we add the donwload link of the gallery.
+      elseif ($_SESSION['role']=="employee") {
         echo "<a href='gallery.zip' download='gallery.zip'>Download gallery</a>";
       }
     }
@@ -342,7 +345,7 @@ h1 {
       $resultat = $query->fetchAll();
 
 
-
+      //Portfolio gallery Grid with a loop who take the id and the name of the picture  and post it.
       foreach ($resultat as $key => $variable) {
 
 
@@ -355,6 +358,7 @@ h1 {
         $like = $ligne[0];
 
 
+        //Test if the user are connected,so we fetch the user id.
 
 if(isset($_SESSION['connected'])){
         $email=$_SESSION['username'];
@@ -380,6 +384,8 @@ if(isset($_SESSION['connected'])){
               echo "<form  action='Image\gallery\upload_heart.php' class='form-container' method='POST' enctype='multipart/form-data'>";
               echo "<input type='hidden' name='src' value='".$src."'>";
               echo "<input type='hidden' name='name' value='".$name."'>";
+
+              //Test if the user are connected,if their are, we show the heart for add like.
 if(isset($_SESSION['connected'])){
               $bdd3=connexobject("webproject","myparam");
               $pic=$bdd3->prepare("SELECT likes FROM `commentary` WHERE id=? AND picture_id=?");
@@ -406,6 +412,8 @@ if(isset($_SESSION['connected'])){
 
               echo"</div>";
               echo "<h4>Comments</h4>";
+
+              //Create a new loop for show the comment of each picture
               foreach ($resultat_comment as $key2 => $value) {
 
 
@@ -420,6 +428,7 @@ if(isset($_SESSION['connected'])){
                 }
 
 
+                //Test if the user are connected,if their are, we show the box for add a comment.
 
           if(isset($_SESSION['connected'])){
                 echo "<div class='form' id='myForm3'>
@@ -444,19 +453,19 @@ if(isset($_SESSION['connected'])){
 
   <script>
 
-  filterSelection("all") // Execute the function and show all columns
+  filterSelection("all") // Execute the function and show all columns.
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("column");
   if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected.
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
 
-// Show filtered elements
+// Show filtered elements.
 function w3AddClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -468,7 +477,7 @@ function w3AddClass(element, name) {
   }
 }
 
-// Hide elements that are not selected
+// Hide elements that are not selected.
 function w3RemoveClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -481,7 +490,7 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-// Add active class to the current button (highlight it)
+// Add active class to the current button (highlight it).
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
@@ -491,7 +500,7 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
-
+//Function for change the heart color.
 function myFunction(x) {
   x.classList.toggle("change");
 }

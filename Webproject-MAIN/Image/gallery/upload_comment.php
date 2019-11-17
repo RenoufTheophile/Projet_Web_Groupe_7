@@ -2,6 +2,7 @@
 session_start();
 $name =$_POST['name'];
 
+//Connexion with the database and to insert the user id, the picture and the comment
   include("../../AccerBDD.php");
     $bdd=connexobject("webproject","myparam");
     $email=$_SESSION['username'];

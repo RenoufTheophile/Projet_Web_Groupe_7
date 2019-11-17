@@ -1,0 +1,38 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/activity/edit/<%=data[0].activity_id%>">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">activity_name</td><td>: <input type="text" name="activity_name" value="<%=data[0].activity_name%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">activity_dated</td><td>: <input type="text" name="activity_dated" value="<%=data[0].activity_dated%>" required></td>
+                 </tr>
+                <tr>
+                    <td class="label">activity_decription</td><td>: <input type="text" value="<%=data[0].activity_decription%>" name="activity_decription" required></td>
+                 </tr>
+                  <tr>
+                    <td class="label">activity_time</td><td>: <input type="text" name="activity_time" value="<%=data[0].activity_time%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">activity_cost</td><td>: <input type="text" name="activity_cost" value="<%=data[0].activity_cost%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">recurring</td><td>: <input type="text" name="recurring" value="<%=data[0].recurring%>" required></td>
+                 </tr>
+                 <tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd3()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        
+<%- include layouts/footer.ejs %>

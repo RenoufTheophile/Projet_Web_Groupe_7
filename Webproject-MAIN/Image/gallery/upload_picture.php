@@ -3,6 +3,7 @@
 session_start();
 if(isset($_FILES['fileToUpload']))
 {
+  //Connexion to database and to upload a new picture into the database
   include("../../AccerBDD.php");
     $bdd=connexobject("webproject","myparam");
     $email=$_SESSION['username'];
@@ -14,36 +15,19 @@ if(isset($_FILES['fileToUpload']))
     echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     $picture_photo=$_FILES["fileToUpload"]["name"];
 
-    $req = $bdd->prepare('INSERT INTO picture (picture_id, id, picture_name, picture_description) VALUES(NULL,?, ?, ?)');
+    $req = $bdd->prepare('INSERT INTO picture (picture_id, id, picture_name, picture_description, likes) VALUES(NULL,?, ?, ?, NULL)');
     $req->execute(array($id,$picture_photo, $picture_description));
-
 
     foreach($_FILES["fileToUpload"] as $cle =>$valeur){
         echo"clé: $cle valeur: $valeur <br />";
-
     }
-    $zip = new ZipArchive();
-    if ($zip->open('../../galery.zip', ZipArchive::CREATE) === TRUE) {
-        $bdd1=connexobject("webproject","myparam");
-        $req1 = $bdd1-> query('SELECT * FROM `picture`');
-        $a=$req1->fetchAll();
-        foreach ($a as $key => $value) {
-          $picture=$a[$key]['picture_name'];
-          $zip->addFile($picture);
-          }
-          $zip->close();
-          echo '<p>ok</p>';
-      } else {
-          echo '<p>échec</p>';
-      }
-
     $result=move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $picture_photo);
     if($result==TRUE){
         echo"<h2>Informations about the update</h2>
         <hr /><big>Le transfert est effectué ! $picture_photo ,$id,$picture_description</big>";
         echo"
 
-    <a href=\"../../gallery.php\"><button class=\"button\"><span>Back to Galery</span></button></a>";
+    <a href=\"../../galery.php\"><button class=\"button\"><span>Back to Galery</span></button></a>";
       }
 
     }
