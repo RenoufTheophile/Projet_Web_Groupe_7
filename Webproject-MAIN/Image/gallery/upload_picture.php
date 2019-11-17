@@ -23,7 +23,7 @@ if(isset($_FILES['fileToUpload']))
 
     }
     $zip = new ZipArchive();
-    if ($zip->open('../../gallery.zip', ZipArchive::CREATE) === TRUE) {
+    if ($zip->open('../../galery.zip', ZipArchive::CREATE) === TRUE) {
         $bdd1=connexobject("webproject","myparam");
         $req1 = $bdd1-> query('SELECT * FROM `picture`');
         $a=$req1->fetchAll();
