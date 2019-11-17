@@ -20,12 +20,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 280px;
 }
 
+
+
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
   position: fixed;
   bottom: 0;
-  right: 15px;
+  right: auto;
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
@@ -76,38 +78,73 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </style>
 </head>
 <body>
+  <div class="form-popup" id="myForm2">
+  <form action="mail.php" class="form-container"method="POST" enctype="multipart/form-data" style="border:1px solid #ccc">
+<
+          <h1>BAD Picture</h1>
+          <p>Please fill in this form to report an picture</p>
+
+          <label for="description"><b>Put why you report this picture</b></label>
+            <input type="text" placeholder="Enter picture description" name="picture_description" required>
+
+
+          <label for="picture"><b>Put the name of the picture</b></label>
+            <input type="text" place holder="Enter picture name" name="picture_name" id="picture_name" >
+
+
+          <button type="button" onclick="closeForm()" class="btn cancel">Cancel</button>
+          <input type="submit" name="btn" value="Upload Mail">
+          </form>
+        </div>
 
 <h2>Upload Image Form</h2>
 <p>Click on the button at the bottom of this page to upload an image.</p>
 <p>This button will appear only for connected users</p><br />
 
-<button class="open-button" onclick="openForm()">Upload Picture</button>
+<button class="open-button" onclick="openForm1()">Upload Picture</button>
+<button class="open-button" onclick="openForm2()">Delete Picture</button>
 
 <div class="form-popup" id="myForm">
 <form action="Image/gallery/upload_picture.php" class="form-container"method="POST" enctype="multipart/form-data" style="border:1px solid #ccc">
 
         <h1>Add Picture</h1>
         <p>Please fill in this form to add a picture</p>
-  
+
         <label for="description"><b>Put the name/comment you want for this picture</b></label>
           <input type="text" placeholder="Enter picture description" name="picture_description" required>
-  
-  
+
+
         <label for="photo"><b>Select picture to upload</b></label>
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image">
-  
-        
+
+
         <button type="button" onclick="closeForm()" class="btn cancel">Cancel</button>
         <input type="submit" name="btn" value="Upload Image">
         </form>
       </div>
       <script>
-function openForm() {
+var action = 1;
+var action2 = 1;
+
+function openForm1() {
+  if ( action == 1 ) {
   document.getElementById("myForm").style.display = "block";
+  action=2;
+}else{
+  document.getElementById("myForm").style.display = "none";
+  action=1;
+}
 }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+function openForm2() {
+  if ( action2 == 1 ) {
+  document.getElementById("myForm2").style.display = "block";
+  action2=2;
+}else{
+  document.getElementById("myForm2").style.display = "none";
+  action2=1;
+}
 }
 </script>
-</div>
+
+</body>

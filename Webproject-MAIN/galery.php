@@ -1,4 +1,5 @@
-
+<?php session_start();
+ ?>
 <!DOCTYPE html>
   <html>
   <head>
@@ -92,6 +93,14 @@ body {
 .main {
   max-width: 1000px;
   margin: auto;
+}
+
+#myForm2{
+  right:325px;
+}
+
+#myForm{
+  right: 15px;
 }
 
 h1 {
@@ -219,6 +228,45 @@ h1 {
 .change .heart:before{
   background-color: red;
 }
+.heart2 {
+  background-color: red;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 10px;
+}
+
+.heart2:before,
+.heart2:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.heart2:before {
+  top: -5px;
+  left: 0;
+}
+
+.heart2:after {
+  left: 5px;
+  top: 0;
+}
+.change2 .heart{
+  background-color: black;
+}
+.change2 .heart:after{
+  background-color: black;
+}
+.change2 .heart:before{
+  background-color: black;
+}
   </style>
   </head>
   <body>
@@ -231,42 +279,24 @@ h1 {
   </body>
   <body>
 
+
+
     <?php
     if(isset($_SESSION['connected'])){
       if($_SESSION['role']=="bdemember"||$_SESSION['role']=="student"){
 
-        include("uploadImageGallery.php");
+        include("Image\gallery\uploadImageGallery.php");
+      }elseif ($_SESSION['role']=="employee") {
+        echo "<a href='gallery.zip' download='gallery.zip'>Download gallery</a>";
       }
     }
     ?>
 
 
 
-      <div class="form-popup" id="myForm">
-      <form action="Image/gallery/upload_picture.php" class="form-container"method="POST" enctype="multipart/form-data" style="border:1px solid #ccc">
-
-              <h1>Add Picture</h1>
-              <p>Please fill in this form to add a picture</p>
-
-              <label for="description"><b>Put the name/comment you want for this picture</b></label>
-                <input type="text" placeholder="Enter picture description" name="picture_description" required>
-
-
-              <label for="photo"><b>Select picture to upload</b></label>
-                <input type="file" name="fileToUpload" id="fileToUpload" accept="image">
-
-
-              <button type="button" onclick="closeForm()" class="btn cancel">Cancel</button>
-              <input type="submit" name="btn" value="Upload Image">
-              </form>
-            </div>
-
-
   <!-- Header -->
   <h2>gallery</h2>
-  <div id="myBtnContainer">
-    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  </div>
+  <div id="myBtnContainer" class="btn active"></div>
 
   <!-- Photo Grid -->
   <div class="row">
@@ -280,6 +310,8 @@ h1 {
 
 
       foreach ($resultat as $key => $variable) {
+
+
         $src=$resultat[$key]['picture_name'];
         $name=$resultat[$key]['picture_id'];
 
@@ -288,10 +320,21 @@ h1 {
         $ligne = $statement->fetch();
         $like = $ligne[0];
 
+
+
+if(isset($_SESSION['connected'])){
+        $email=$_SESSION['username'];
+        $statement = $bdd->prepare("SELECT id FROM user WHERE email = ?");
+        $statement->execute(array($email));
+        $ligne = $statement->fetch();
+        $id = $ligne[0];}
+
+
         $bdd_comment=connexobject("webproject","myparam");
-        $query_comment=$bdd_comment->prepare("SELECT `commentary.comment`, `user.first_name`, `user.last_name` FROM `commentary`,`user` WHERE `picture_id`=? AND `user.id`=`commentary.id`");
+        $query_comment=$bdd_comment->prepare("CALL select_comment(?)");
         $query_comment->execute(array($name));
         $resultat_comment=$query_comment->fetchAll();
+
 
         echo "<div class='column nature'>";
           echo"<div class='content'>";
@@ -299,27 +342,68 @@ h1 {
             echo"<div class='content'>";
               echo"<h4>".$resultat[$key]['picture_name']."</h4>";
               echo"<p>".$resultat[$key]['picture_description']."</p>";
-              echo "<div class='form-popup 'id='myLikes'>";
-              echo "<form action='Image/gallery/upload_heart.php' class='form-container' method='POST' enctype='multipart/form-data' style='border:1px solid #ccc'>";
-              echo "<div class='container' onclick='myFunction(this)'>";
-              echo "<label class ='heart'></label>";
-              echo "<input type='submit'  name='likes' values='Like'>";
+              echo "<div class='form'id='myLikes'>";
+              echo "<form  action='Image\gallery\upload_heart.php' class='form-container' method='POST' enctype='multipart/form-data' style='border:1px solid #ccc'>";
+              echo "<input type='hidden' name='src' value='".$src."'>";
+              echo "<input type='hidden' name='name' value='".$name."'>";
+if(isset($_SESSION['connected'])){
+              $bdd3=connexobject("webproject","myparam");
+              $pic=$bdd3->prepare("SELECT likes FROM `commentary` WHERE id=? AND picture_id=?");
+              $pic ->execute( array($id,$name));
+              $ligne3=$pic->fetch();
+              $picture_id=$ligne3[0];
+              if ($picture_id==NULL){
+                echo "<div class='container' onclick='myFunction(this)'>";
+                echo "<label class ='heart'></label>";
+                echo "<input type='submit'  name='likes' values='Like'>";
+
+
+              }
+              else {
+                echo "<div class='container' onclick='myFunction2(this)'>";
+                echo "<label class ='heart2'></label>";
+                echo "<input type='submit'  name='likes2' values='Like'>";
+              
+
+
+              }
               echo "</form>";
-              echo "</div>";
-              echo "<p>".$like."</p>";
+              echo "</div>";}
+
               echo"</div>";
               echo "<h4>Comment</h4>";
-              foreach ($resultat_comment as $key => $value) {
+              foreach ($resultat_comment as $key2 => $value) {
 
-                $comment=$resultat_comment[$key]['comment'];
-                $first_name=$resultat_comment[$key]['first_name'];
-                $last_name=$resultat_comment[$key]['last_name'];
+
+                $comment=$resultat_comment[$key2]['comment'];
+                if ($comment==!NULL){
+                $first_name=$resultat_comment[$key2]['first_name'];
+                $last_name=$resultat_comment[$key2]['last_name'];
                 echo "<h5>".$first_name." ".$last_name."</h5>";
-                echo "<p>".$comment."</p>";
+                echo "<p>".$comment."</p>";}
                 }
+
+
+
+
+          if(isset($_SESSION['connected'])){
+                echo "<div class='form' id='myForm3'>
+                <form action='Image/gallery/upload_comment.php' class='form-container' method='POST' enctype='multipart/form-data' style='border:1px solid #ccc'>
+                <input type='hidden' name='name' value='".$name."'>
+                        <h2>Add Comment</h2>
+                        <p>Please fill in this form to add a comment</p>
+
+                        <label for='description'><b>Put the name/comment you want for this picture</b></label>
+                          <input type='text' placeholder='Enter picture description' name='picture_comment' required>
+                        <button type='button' onclick='closeForm()' class='btn cancel'>Cancel</button>
+                        <input type='submit' name='btn' value='Upload Comment'>
+                        </form>
+                      </div>";
+}
             echo "</div>";
           echo "</div>";
         echo"</div>";
+
       }
       ?>
   </div>
@@ -382,6 +466,9 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 function myFunction(x) {
+  x.classList.toggle("change");
+}
+function myFunction2(x) {
   x.classList.toggle("change");
 }
   </script>
