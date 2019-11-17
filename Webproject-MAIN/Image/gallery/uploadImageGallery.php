@@ -8,16 +8,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-  background-color: #555;
   color: white;
-  padding: 16px 20px;
+  padding: 16px 10px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
-  position: relative;
-  bottom: 23px;
-  right: 28px;
   width: 280px;
+  background-color: #4d75bb;
+  border-radius: 15px;
 }
 
 
@@ -36,7 +34,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .form-container {
   max-width: 300px;
   padding: 10px;
-  background-color: white;
+  background-color: #4d75bb;
 }
 
 /* Full-width input fields */
@@ -75,6 +73,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+
+
 </style>
 </head>
 <body>
@@ -92,14 +93,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <input type="text" place holder="Enter picture name" name="picture_name" id="picture_name" >
 
 
-          <button type="button" onclick="closeForm()" class="btn cancel">Cancel</button>
+          <button type="button" onclick="closeForm2()" class="btn cancel">Cancel</button>
           <input type="submit" name="btn" value="Upload Mail">
           </form>
         </div>
 
-<h2>Upload Image Form</h2>
-<p>Click on the button at the bottom of this page to upload an image.</p>
-<p>This button will appear only for connected users</p><br />
+
 
 <button class="open-button" onclick="openForm1()">Upload Picture</button>
 <button class="open-button" onclick="openForm2()">Delete Picture</button>
@@ -145,6 +144,15 @@ function openForm2() {
   action2=1;
 }
 }
+
+function closeForm(){
+  document.getElementById("myForm").style.display = "none";
+}
+
+function closeForm2(){
+  document.getElementById("myForm2").style.display = "none";
+}
 </script>
+
 
 </body>

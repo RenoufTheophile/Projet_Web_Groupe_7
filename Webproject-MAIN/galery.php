@@ -8,7 +8,7 @@
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<link rel="stylesheet" type="text/css" href="style.css"/>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -17,8 +17,9 @@
   }
 
   body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    font-family: Roboto, sans-serif;
+    text-align: center;
   }
 
   .header {
@@ -41,9 +42,14 @@
     padding: 0 4px;
   }
 
+
+
   .column img {
     margin-top: 8px;
     vertical-align: middle;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: thin;
   }
 
   /* Style the buttons */
@@ -71,7 +77,7 @@
 }
 
 .container .content {
-  position: absolute; /* Position the background text */
+  position: relative;; /* Position the background text */
   bottom: 0; /* At the bottom. Use top:0 to append it to the top */
   background: rgb(0, 0, 0); /* Fallback color */
   background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
@@ -85,15 +91,15 @@
 
 body {
   background-color: #f1f1f1;
-  padding: 20px;
-  font-family: Arial;
+
+  font-family: Roboto, sans-serif;
 }
 
-/* Center website */
-.main {
-  max-width: 1000px;
-  margin: auto;
+main{
+  margin:20px;
 }
+
+
 
 #myForm2{
   right:325px;
@@ -134,9 +140,28 @@ h1 {
 
 /* Content */
 .content {
-  background-color: white;
+  background-color:#4d75bb;
+  border-color:black;
   padding: 10px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 10px;
+  text-align: center;
 }
+
+.content2{
+  color: white;
+}
+
+.form{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width:300px;
+
+}
+
+
 
 /* The "show" class is added to the filtered elements */
 .show {
@@ -198,6 +223,15 @@ h1 {
   top: 0;
   transform: rotate(-45deg);
   width: 10px;
+}
+
+.commentary{
+  text-align: justify;
+  margin-left: 25px;
+}
+
+.cont-commentary{
+  margin-top: 15px;
 }
 
 .heart:before,
@@ -278,7 +312,7 @@ h1 {
   ?>
   </body>
   <body>
-
+<main>
 
 
     <?php
@@ -339,11 +373,11 @@ if(isset($_SESSION['connected'])){
         echo "<div class='column nature'>";
           echo"<div class='content'>";
             echo"<img src='Image/gallery/".$src."' alt='comment' style='width: 100%'>";
-            echo"<div class='content'>";
+            echo"<div class='content2'>";
               echo"<h4>".$resultat[$key]['picture_name']."</h4>";
               echo"<p>".$resultat[$key]['picture_description']."</p>";
               echo "<div class='form'id='myLikes'>";
-              echo "<form  action='Image\gallery\upload_heart.php' class='form-container' method='POST' enctype='multipart/form-data' style='border:1px solid #ccc'>";
+              echo "<form  action='Image\gallery\upload_heart.php' class='form-container' method='POST' enctype='multipart/form-data'>";
               echo "<input type='hidden' name='src' value='".$src."'>";
               echo "<input type='hidden' name='name' value='".$name."'>";
 if(isset($_SESSION['connected'])){
@@ -363,7 +397,7 @@ if(isset($_SESSION['connected'])){
                 echo "<div class='container' onclick='myFunction2(this)'>";
                 echo "<label class ='heart2'></label>";
                 echo "<input type='submit'  name='likes2' values='Like'>";
-              
+
 
 
               }
@@ -371,7 +405,7 @@ if(isset($_SESSION['connected'])){
               echo "</div>";}
 
               echo"</div>";
-              echo "<h4>Comment</h4>";
+              echo "<h4>Comments</h4>";
               foreach ($resultat_comment as $key2 => $value) {
 
 
@@ -379,26 +413,25 @@ if(isset($_SESSION['connected'])){
                 if ($comment==!NULL){
                 $first_name=$resultat_comment[$key2]['first_name'];
                 $last_name=$resultat_comment[$key2]['last_name'];
-                echo "<h5>".$first_name." ".$last_name."</h5>";
-                echo "<p>".$comment."</p>";}
+                echo "<div class='cont-commentary'>";
+                echo "<h5 class='commentary'>".$first_name." ".$last_name."</h5>";
+                echo "<p class='commentary'>".$comment."</p>";
+                echo "</div>";}
                 }
-
 
 
 
           if(isset($_SESSION['connected'])){
                 echo "<div class='form' id='myForm3'>
-                <form action='Image/gallery/upload_comment.php' class='form-container' method='POST' enctype='multipart/form-data' style='border:1px solid #ccc'>
+                <form action='Image/gallery/upload_comment.php' class='form-container' method='POST' enctype='multipart/form-data'>
                 <input type='hidden' name='name' value='".$name."'>
-                        <h2>Add Comment</h2>
-                        <p>Please fill in this form to add a comment</p>
-
-                        <label for='description'><b>Put the name/comment you want for this picture</b></label>
+                        <h2>Add a comment</h2>
                           <input type='text' placeholder='Enter picture description' name='picture_comment' required>
-                        <button type='button' onclick='closeForm()' class='btn cancel'>Cancel</button>
                         <input type='submit' name='btn' value='Upload Comment'>
                         </form>
                       </div>";
+
+
 }
             echo "</div>";
           echo "</div>";
@@ -458,13 +491,7 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
 function myFunction(x) {
   x.classList.toggle("change");
 }
@@ -472,11 +499,5 @@ function myFunction2(x) {
   x.classList.toggle("change");
 }
   </script>
-  <footer>
-  <?php
-
-  include("footer.php");
-
-  ?>
-  </footer>
+</main>
   </body>
