@@ -78,7 +78,7 @@ header h1{
 /*un produit une page*/
 .produits .image_p{
     float: left;
-    height: 500px;
+    max-height: 200px;
 } 
 .produits .flottant{
     float:left;
@@ -128,4 +128,10 @@ form .euro{
     position: relative;
     left: 700px;
     top: -230px;
+}
+
+/*panier divisé*/
+.produit_seul{
+    border-top: solid ;
+    border-bottom: solid;
 }
