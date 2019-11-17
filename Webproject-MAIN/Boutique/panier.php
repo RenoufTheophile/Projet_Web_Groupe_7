@@ -42,15 +42,15 @@ requete pour remplir template_panier
                             <div class='quantité'> Quantité de cet article dans votre panier:".$nombre."</div>
                             <div class='prix'> Prix: ".$data2['goodies_cost']."€ </div>
                             <div class='catégorie'> Catégorie: ".$data2['goodies_category']."</div>
-                            <div class='description'> Description: </br>".$data2['goodies_description']."
+                            <div class='description'> Description: </br>".$data2['goodies_description']."</div>
                         </div>
                     </a>
 
-                    <form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/supprime1_panier.php' method='post' id='form_panier'>
+                    <form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/supprime1_panier.php' method='post'>
                     <input type='hidden' name='id' value='".$produit."'/>
                     <input type='submit' name='valider' value='Retirer du panier un exemplaire'/>
                     </form>
-                    <form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/supprime_panier.php' method='post' id='form_panier'>
+                    <form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/supprime_panier.php' method='post'>
                     <input type='hidden' name='id' value='".$produit."'/>
                     <input type='submit' name='valider' value='Retirer du panier tout les exemplaires'/>
                     </form>
