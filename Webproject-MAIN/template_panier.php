@@ -37,7 +37,7 @@ session_start();
 
     <!-- Corps -->
     <div id='validation'>
-        <form action='/webproject/Webproject-MAIN/Boutique/valide_panier.php' method='post' id='form_panier'>
+        <form action='Boutique/valide_panier.php' method='post' id='form_panier'>
             <input type='submit' name='validation' value='Passer commande'/>
         </form>
     </div>
