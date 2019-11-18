@@ -16,6 +16,14 @@ $bdd = new PDO('mysql:host=localhost;dbname=webproject;charset=utf8', 'root', ''
 
     
     $data=$requete->fetch(PDO::FETCH_ASSOC);
+
+    $requete->closeCursor();
     
-header('Location:../template_produit.php?id='.$data['goodies_id']);
+    /* vérifie que l'article existe*/
+    if (isset($data['goodies_id'])){
+        header('Location:../template_produit.php?id='.$data['goodies_id']);
+    }
+    else{
+        header('Location:../Boutique.php');
+    }
 ?>
