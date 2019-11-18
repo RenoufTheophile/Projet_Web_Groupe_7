@@ -61,7 +61,7 @@ if(isset($_SESSION['connected'])){
             </div>
             <div class="column">
                 <div class="content">
-                    <a class="lien-content" href="Events.php">
+                    <a class="lien-content" href="Club.php">
                         <img class='imageContent' src='Image\event\VIEASSOmain.jpg' alt='Event Image' style='width:100%;height: auto'>
                         <p class='titreEvt'>Clubs</p>
                         <p class="descriptionContent">Les clubs ou mini-associations permettent de se vider la tête dans le campus avec tout les étudiants du CESI.</p>
@@ -81,7 +81,7 @@ if(isset($_SESSION['connected'])){
             </div>
             <div class="column">
                 <div class="content">
-                    <a class="lien-content" href="Events.php">
+                    <a class="lien-content" href="Boutique.php">
                         <img class='imageContent' src='Image\event\Pandamain.jpg' alt='Event Image' style='width:100%;height: auto'>
                         <p class='titreEvt'>Boutique</p>
                         <p class="descriptionContent">Dans cette boutique, vous pourrez trouvez les petits goodies que le BDE du CESI à en réserve. Il paraît qu'on devient plus beau avec un de ses goodies.</p>
