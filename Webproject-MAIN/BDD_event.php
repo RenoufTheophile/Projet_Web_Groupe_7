@@ -13,4 +13,6 @@ $file_activity = $_POST['file_activity'];
 $req = $bdd->prepare('INSERT INTO activity (activity_name, activity_dated, activity_description, activity_time, activity_cost, activity_image) VALUES(?, ?, ?, ?, ?, ?)');
 $req->execute(array($name_activity, $date_activity, $description_activity, $length_activity, $activity_price, $file_activity));
 
+//Insertion des données dans la table activity
+
 ?>

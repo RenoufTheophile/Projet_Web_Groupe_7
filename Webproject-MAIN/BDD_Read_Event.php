@@ -75,6 +75,8 @@ function countParticipation(){
 
 
     return $ligne;
+
+    //Récupération des données de la table activités dans l'ordre
 }
 
 // $id_act = $ligne[0];

@@ -43,6 +43,8 @@
 
         <h2>LES ÉVÉNEMENTS DU CESI ROUEN</h2>
 
+        //Carousel avec les images des 3 événements les plus proches par rapport à aujourd'hui
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -78,6 +80,8 @@
             </a>
         </div>
 
+
+        //Affichage de la liste des événements
         <!-- Portfolio Gallery Grid -->
         <div class="container-fluid">
             <div class="row">
@@ -104,7 +108,7 @@
 
     </div>
 
-
+    //Bouton accédant à un formulaire pour ajouter un événement
     <a href="AddEvent.php">
         <button type="button" class="btn btn-warning" style="
                     display: block;
