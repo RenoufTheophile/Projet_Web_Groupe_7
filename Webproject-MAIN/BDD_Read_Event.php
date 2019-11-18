@@ -7,7 +7,6 @@ function readEvent(){
 
     $req = $bdd->prepare('select * from activity order by activity_dated ASC');
 
-//execute the statement to select the password by the email/account name
     $req->execute(array());
     $ligne=$req->fetchAll();
 
@@ -23,7 +22,6 @@ function readEvent2(){
 
     $req = $bdd->prepare('select * from activity');
 
-//execute the statement to select the password by the email/account name
     $req->execute(array());
     $ligne=$req->fetchAll();
 
@@ -39,7 +37,6 @@ function readEvent3($id_act){
 
     $req = $bdd->prepare('select * from activity where activity_id=?');
 
-//execute the statement to select the password by the email/account name
     $req->execute(array($id_act));
     $ligne=$req->fetch();
 
@@ -55,7 +52,6 @@ function countAct(){
 
     $req = $bdd->prepare('select count(activity_id) from activity');
 
-//execute the statement to select the password by the email/account name
     $req->execute(array());
     $ligne=$req->fetch();
 
@@ -69,7 +65,6 @@ function countParticipation(){
 
     $req = $bdd->prepare('select activity_id, count(id) from participate GROUP BY activity_id ORDER BY `count(id)` DESC');
 
-//execute the statement to select the password by the email/account name
     $req->execute(array());
     $ligne=$req->fetchAll();
 

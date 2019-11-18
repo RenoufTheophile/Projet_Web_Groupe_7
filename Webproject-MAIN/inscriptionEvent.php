@@ -11,6 +11,6 @@ $bdd = connexobject("webproject", "myparam");
 $req = $bdd->prepare('INSERT INTO participate (id, activity_id) VALUES(?, ?)');
 $req->execute(array($id, $id_act));
 
-//Insertion des participants aux activités par leurs ID
+/*Insertion des participants aux activités par leurs ID*/
 
 ?>

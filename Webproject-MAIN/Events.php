@@ -108,7 +108,7 @@
 
     </div>
 
-    //Bouton accédant à un formulaire pour ajouter un événement
+    <!--Bouton accédant à un formulaire pour ajouter un événement-->
     <a href="AddEvent.php">
         <button type="button" class="btn btn-warning" style="
                     display: block;

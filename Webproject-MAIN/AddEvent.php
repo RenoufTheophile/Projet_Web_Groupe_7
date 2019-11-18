@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<form action="BDD_event.php" method  ="POST" enctype="application/x-www-form-urlencoded" style="border:1px solid #ccc">
+<form action="BDD_event.php" method  ="POST" enctype="multipart/form-data" style="border:1px solid #ccc">
     <div class="container">
         <h1>Add Event</h1>
         <p>Please fill in this form to add an event.</p>
@@ -46,7 +46,7 @@
 
         <div>
             <label for="fichier"><b>Image de l'événement</b></label>
-            <input type="file" placeholder="File" name="file_activity" required>
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="image" required>
         </div>
 
         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>

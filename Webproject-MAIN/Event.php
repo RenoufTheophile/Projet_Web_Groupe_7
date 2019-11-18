@@ -39,7 +39,7 @@ include_once("BDD_Read_Event.php");
 
 
 
-        //Affichage de l'événement en détail
+        <!--Affichage de l'événement en détail-->
         <div class="last">
             <?php
             $id_event= $_GET['id_event'];

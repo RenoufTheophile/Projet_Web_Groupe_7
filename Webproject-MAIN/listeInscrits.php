@@ -25,6 +25,6 @@ foreach($ligne as $i => $value){
 
 $pdf->Output();
 
-//Affichage en PDF des inscrits
+/*Affichage en PDF des inscrits*/
 
 ?>
