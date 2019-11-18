@@ -22,7 +22,7 @@ requete pour remplir template_produit
                     <div class='description'> Description: </br>".$data['goodies_description']."</div>
                 </div>";
                 if (isset($_SESSION['connected'])){
-                    echo"<form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/ajout_panier.php' method='post' >
+                    echo"<form action='Boutique/ajout_panier.php' method='post' >
                     <input type='hidden' name='id' value='".$id."'/>
                     Nombres d'exemplaires<input name='quantité' required/>
                     <input type='submit' name='valider' value='Ajouter au panier'/>

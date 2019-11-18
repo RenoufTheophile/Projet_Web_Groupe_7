@@ -46,11 +46,11 @@ requete pour remplir template_panier
                         </div>
                     </a>
 
-                    <form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/supprime1_panier.php' method='post'>
+                    <form action='Boutique/supprime1_panier.php' method='post'>
                     <input type='hidden' name='id' value='".$produit."'/>
                     <input type='submit' name='valider' value='Retirer du panier un exemplaire'/>
                     </form>
-                    <form action='/Projet_Web_Groupe_7/Webproject-MAIN/Boutique/supprime_panier.php' method='post'>
+                    <form action='Boutique/supprime_panier.php' method='post'>
                     <input type='hidden' name='id' value='".$produit."'/>
                     <input type='submit' name='valider' value='Retirer du panier tout les exemplaires'/>
                     </form>
