@@ -341,7 +341,7 @@ h1 {
       <?php
       include("AccerBDD.php");
       $bdd=connexobject("webproject","myparam");
-      $query = $bdd->query("SELECT * FROM `picture`");
+      $query = $bdd->query("CALL select_picture()");
       $resultat = $query->fetchAll();
 
 
@@ -362,7 +362,7 @@ h1 {
 
 if(isset($_SESSION['connected'])){
         $email=$_SESSION['username'];
-        $statement = $bdd->prepare("SELECT id FROM user WHERE email = ?");
+        $statement = $bdd->prepare("CALL select_i(?)");
         $statement->execute(array($email));
         $ligne = $statement->fetch();
         $id = $ligne[0];}
@@ -388,7 +388,7 @@ if(isset($_SESSION['connected'])){
               //Test if the user are connected,if their are, we show the heart for add like.
 if(isset($_SESSION['connected'])){
               $bdd3=connexobject("webproject","myparam");
-              $pic=$bdd3->prepare("SELECT likes FROM `commentary` WHERE id=? AND picture_id=?");
+              $pic=$bdd3->prepare("CALL select_likes2(?,?)");
               $pic ->execute( array($id,$name));
               $ligne3=$pic->fetch();
               $picture_id=$ligne3[0];
@@ -408,9 +408,9 @@ if(isset($_SESSION['connected'])){
 
               }
               echo "</form>";
-              echo "</div>";}
+              echo "</div>";
 
-              echo"</div>";
+              echo"</div>";}
               echo "<h4>Comments</h4>";
 
               //Create a new loop for show the comment of each picture
